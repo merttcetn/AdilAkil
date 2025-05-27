@@ -2,8 +2,19 @@ import Link from "next/link";
 
 export default function Home() {
     return (
-        <div className="min-h-screen bg-gradient-to-br from-background via-background to-accent/10 flex items-center justify-center p-4">
-            <div className="max-w-4xl mx-auto text-center">
+        <div
+            className="min-h-screen bg-gradient-to-br from-background via-background to-accent/10 flex items-center justify-center p-4 relative"
+            style={{
+                backgroundImage: "url(/bg3.webp)",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+                backgroundAttachment: "fixed",
+            }}
+        >
+            {/* Background Overlay */}
+            <div className="absolute inset-0 bg-background/85 backdrop-blur-[1px]"></div>
+
+            <div className="max-w-4xl mx-auto text-center relative z-10">
                 {/* Hero Section */}
                 <div className="mb-8">
                     <div className="inline-flex items-center justify-center w-30 h-30 br-gradient-to-br from-surface to-primary rounded-3xl mb-6 shadow-xl border border-border p-2">
@@ -125,6 +136,29 @@ export default function Home() {
                             Kolay ve anlaşılır arayüz
                         </p>
                     </div>
+                </div>
+
+                {/* Additional Navigation */}
+                <div className="mt-12 flex justify-center">
+                    <Link
+                        href="/about"
+                        className="inline-flex items-center gap-2 text-text/70 hover:text-primary px-6 py-3 rounded-lg border border-accent/20 hover:border-accent/40 transition-all duration-300"
+                    >
+                        <svg
+                            className="w-4 h-4"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth={2}
+                                d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                            />
+                        </svg>
+                        Kullanmaya başlamadan önce lütfen okuyun
+                    </Link>
                 </div>
 
                 {/* Footer */}
