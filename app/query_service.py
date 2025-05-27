@@ -2,46 +2,18 @@ import os
 from app.embedding import embed_question
 from app.pinecone_client import query_vectors
 from app.utils import is_sensitive_keyword
+from app.prompt_builder import chain
 from dotenv import load_dotenv
-from langchain.prompts import PromptTemplate
-from langchain_openai import ChatOpenAI
 
-# Environment variables
 load_dotenv()
-os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
 SAFETY_INDEX = "adilakil-safety-minilm"
 MAIN_INDEX = "adilakil-main-minilm"
 SAFETY_THRESHOLD = 0.8
 
-# LangChain Prompt Template
-prompt = PromptTemplate.from_template("""
-Sen bir hukuk asistanısın. Aşağıdaki Anayasa ve kanun maddelerini ve örnek soru-cevapları kullanarak, kullanıcının sorusunu açık, anlaşılır ve kısa şekilde yanıtla. Yorum yapma, sadece Anayasa ve Kanun'a dayan.
-
-İlgili Anayasa ve Kanun Maddeleri:
-{context}
-
-Kullanıcının Sorusu:
-{user_question}
-
-Cevabın:
-""")
-
-# LangChain LLM
-llm = ChatOpenAI(
-    model="gpt-3.5-turbo",
-    temperature=0.0,
-    max_tokens=300,
-    openai_api_key=os.getenv("OPENAI_API_KEY")
-)
-
-# Chain oluştur
-chain = prompt | llm
-
 def get_context_with_safety_check(question):
     print(f"🚀 Soru alındı: {question}")
 
-    # Embedding oluştur
     try:
         vec = embed_question(question)
         print(f"✅ Embedding başarıyla oluşturuldu.")
@@ -54,7 +26,6 @@ def get_context_with_safety_check(question):
             "max_score": 0
         }
 
-    # Güvenlik kontrolü
     try:
         safety_result = query_vectors(SAFETY_INDEX, vec, 3)
         print(f"✅ Güvenlik index sorgusu tamamlandı.")
@@ -82,7 +53,6 @@ def get_context_with_safety_check(question):
             "max_score": max_score,
         }
 
-    # Ana index sorgusu
     try:
         main_result = query_vectors(MAIN_INDEX, vec, 3)
         print(f"✅ Ana index sorgusu tamamlandı.")
@@ -95,11 +65,9 @@ def get_context_with_safety_check(question):
             "max_score": max_score
         }
 
-    # getting context
     context = "\n\n".join(
-    [f"Q: {m.metadata.get('question')}\nA: {m.metadata.get('answer')}" for m in main_result.matches]
+        [f"Q: {m.metadata.get('question')}\nA: {m.metadata.get('answer')}" for m in main_result.matches]
     )
-
     print(f"📄 Context oluşturuldu:\n{context}")
 
     return {
@@ -130,3 +98,4 @@ def get_final_answer(question):
     except Exception as e:
         print(f"❌ get_final_answer fonksiyonunda hata: {e}")
         return f"Hata oluştu: {str(e)}"
+    

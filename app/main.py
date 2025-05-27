@@ -11,7 +11,7 @@ app = FastAPI(
 async def root():
     return {"message": "AdilAkil API Calisiyor. /ask?q=Soru ile sorgu yapabilirsiniz. Swagger icin /docs adresini ziyaret edin."}
 
-@app.get("/ask", summary="Soru-Cevap Endpoint'i", description="Kullanıcının sorusunu alır, Pinecone ve OpenAI kullanarak cevabı döner.")
+@app.get("/ask", summary="Hukuki Soru-Cevap", description="Kullanıcının sorusuna Pinecone'dan context alıp, OpenAI GPT ile yanıt verir.")
 async def ask_question(
     q: str = Query(..., description="Kullanıcının sorusu")
 ):
