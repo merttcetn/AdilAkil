@@ -9,7 +9,7 @@ export default function ChatPage() {
     const [messages, setMessages] = useState<Message[]>([
         {
             id: 1,
-            text: "Merhaba! Ben Adil Akıl, size nasıl yardımcı olabilirim?",
+            text: "Merhaba! Ben AdilAkıl, size nasıl yardımcı olabilirim?",
             isUser: false,
             timestamp: new Date(),
         },
@@ -67,16 +67,16 @@ export default function ChatPage() {
                         <div className="w-10 h-10 from-surface to-primary rounded-2xl flex items-center justify-center border border-border p-1">
                             <img
                                 src="/logo.png"
-                                alt="Adil Akıl Logo"
+                                alt="AdilAkıl Logo"
                                 className="w-8 h-8"
                             />
                         </div>
                         <div>
                             <h1 className="text-lg font-semibold text-primary">
-                                Adil Akıl
+                                AdilAkıl
                             </h1>
                             <p className="text-sm text-muted">
-                                AI Hukuk Asistanı
+                                Yapay Zeka Hukuk Asistanı
                             </p>
                         </div>
                     </div>
@@ -118,7 +118,7 @@ export default function ChatPage() {
                                         <div className="w-8 h-8 bg-gradient-to-bg from-surface to-primary rounded-2xl flex items-center justify-center border border-border p-1">
                                             <img
                                                 src="/logo.png"
-                                                alt="Adil Akıl Logo"
+                                                alt="AdilAkıl Logo"
                                                 className="w-6 h-6"
                                             />
                                         </div>
@@ -137,7 +137,7 @@ export default function ChatPage() {
                                         <span className="font-semibold text-primary">
                                             {message.isUser
                                                 ? "Siz"
-                                                : "Adil Akıl"}
+                                                : "AdilAkıl"}
                                         </span>
                                         <span className="text-xs text-muted">
                                             {message.timestamp.toLocaleTimeString(
@@ -170,14 +170,14 @@ export default function ChatPage() {
                                 <div className="w-8 h-8 bg-gradient-to-bg from-surface to-primary rounded-2xl flex items-center justify-center border border-border p-1">
                                     <img
                                         src="/logo.png"
-                                        alt="Adil Akıl Logo"
+                                        alt="AdilAkıl Logo"
                                         className="w-6 h-6"
                                     />
                                 </div>
                                 <div className="flex-1">
                                     <div className="flex items-center gap-2 mb-1">
                                         <span className="font-semibold text-primary">
-                                            Adil Akıl
+                                            AdilAkıl
                                         </span>
                                     </div>
                                     <div className="flex items-center gap-1">
@@ -224,11 +224,11 @@ export default function ChatPage() {
                             disabled={!input.trim() || loading}
                             className="absolute right-2 top-1/2 transform -translate-y-1/2 px-3 py-1 bg-secondary text-white text-sm disabled:bg-muted disabled:cursor-not-allowed rounded-xl"
                         >
-                            Gönder
+                            Sor
                         </button>
                     </div>
                     <p className="text-xs text-muted mt-2 text-center">
-                        Adil Akıl Beta sürümü
+                        AdilAkıl Beta sürümü
                     </p>
                 </div>
             </div>

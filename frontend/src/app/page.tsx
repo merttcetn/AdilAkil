@@ -20,13 +20,13 @@ export default function Home() {
                     <div className="inline-flex items-center justify-center w-30 h-30 br-gradient-to-br from-surface to-primary rounded-3xl mb-6 shadow-xl border border-border p-2">
                         <img
                             src="/logo.png"
-                            alt="Adil Akıl Logo"
+                            alt="AdilAkıl Logo"
                             className="w-24 h-24"
                         />
                     </div>
 
                     <h1 className="text-5xl md:text-6xl font-bold text-primary mb-4 leading-tight">
-                        Adil Akıl'a
+                        AdilAkıl'a
                         <span className="block text-secondary">
                             Hoşgeldiniz
                         </span>

@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "Adil Akıl",
+    title: "AdilAkıl - Hukuk Yapay Zeka Asistanı",
     description:
         "Türk Anayasası ve Kanunları ile eğitilmiş yapay zeka asistanı",
 };

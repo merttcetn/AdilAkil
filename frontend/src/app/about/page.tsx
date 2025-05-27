@@ -1,4 +1,25 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+import Image from "next/image";
+
+export const metadata: Metadata = {
+    title: "AdilAkıl - Hakkında",
+    description:
+        "AdilAkıl uygulaması hakkında önemli bilgiler, kullanım koşulları ve sorumluluk reddi beyanları",
+    openGraph: {
+        title: "AdilAkıl - Hakkında",
+        description:
+            "AdilAkıl uygulaması hakkında önemli bilgiler, kullanım koşulları ve sorumluluk reddi beyanları",
+        images: ["/logo.png"],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "AdilAkıl - Hakkında",
+        description:
+            "AdilAkıl uygulaması hakkında önemli bilgiler, kullanım koşulları ve sorumluluk reddi beyanları",
+        images: ["/logo.png"],
+    },
+};
 
 export default function About() {
     return (
