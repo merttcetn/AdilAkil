@@ -6,7 +6,7 @@ from dotenv import load_dotenv
 from langchain.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
 
-# Ortam değişkenlerini yükle
+# Environment variables
 load_dotenv()
 os.environ["OPENAI_API_KEY"] = os.getenv("OPENAI_API_KEY")
 
@@ -28,7 +28,12 @@ Cevabın:
 """)
 
 # LangChain LLM
-llm = ChatOpenAI(model="gpt-3.5-turbo", temperature=0.1, max_tokens=400)
+llm = ChatOpenAI(
+    model="gpt-3.5-turbo",
+    temperature=0.0,
+    max_tokens=300,
+    openai_api_key=os.getenv("OPENAI_API_KEY")
+)
 
 # Chain oluştur
 chain = prompt | llm
@@ -90,9 +95,11 @@ def get_context_with_safety_check(question):
             "max_score": max_score
         }
 
+    # getting context
     context = "\n\n".join(
-        [f"Q: {m.metadata.get('Q')}\nA: {m.metadata.get('A')}" for m in main_result.matches]
+    [f"Q: {m.metadata.get('question')}\nA: {m.metadata.get('answer')}" for m in main_result.matches]
     )
+
     print(f"📄 Context oluşturuldu:\n{context}")
 
     return {
