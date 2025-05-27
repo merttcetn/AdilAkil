@@ -1,10 +1,20 @@
 from fastapi import FastAPI, Query
+from fastapi.middleware.cors import CORSMiddleware
 from app.query_service import get_final_answer
 
 app = FastAPI(
     title="AdilAkıl API",
     description="Türkiye Cumhuriyeti Anayasası ve Kanunlarına dayalı sorulara yanıt veren yapay zeka servisi.",
     version="1.0.0"
+)
+
+# CORS Middleware ekle
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
 
 @app.get("/")

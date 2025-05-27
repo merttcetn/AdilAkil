@@ -1,0 +1,152 @@
+@import "tailwindcss";
+
+@theme {
+    --color-primary: #f8f9fa; /* Açık beyaz (Ana başlıklar) */
+    --color-secondary: #dc3545; /* Bordo (Butonlar, vurgular) */
+    --color-background: #2c2c2c; /* Koyu gri (Arka plan) */
+    --color-accent: #218838; /* Yeşil (Hover, linkler) */
+    --color-text: #e9ecef; /* Açık gri (Metin) */
+    --color-muted: #adb5bd; /* Orta gri (İkincil metin) */
+    --color-surface: #3a3a3a; /* Koyu gri (Kartlar) */
+    --color-border: #495057; /* Orta koyu gri (Çerçeveler) */
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    font-family: system-ui, -apple-system, sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: var(--color-primary);
+    font-weight: 700;
+}
+
+button,
+.btn {
+    background: linear-gradient(135deg, var(--color-secondary), #e74c3c);
+    color: var(--color-primary);
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: 0 4px 12px rgba(220, 53, 69, 0.3);
+}
+
+button:hover,
+.btn:hover {
+    background: linear-gradient(135deg, var(--color-accent), #19692c);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(40, 167, 69, 0.4);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-background);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-accent);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-secondary);
+}
+
+/* Smooth animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hukuk teması için ek profesyonel stiller */
+.legal-card {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 0.75rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.legal-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 16px rgba(40, 167, 69, 0.2);
+    transform: translateY(-2px);
+}
+
+.text-muted {
+    color: var(--color-muted);
+}
+
+.bg-surface {
+    background-color: var(--color-surface);
+}
+
+.border-accent {
+    border-color: var(--color-accent);
+}
+
+.text-accent {
+    color: var(--color-accent);
+}
+
+.text-secondary {
+    color: var(--color-secondary);
+}
+
+/* Profesyonel gradient arka planlar */
+.gradient-legal {
+    background: linear-gradient(
+        135deg,
+        var(--color-background) 0%,
+        #1a1a1a 100%
+    );
+}
+
+.gradient-accent {
+    background: linear-gradient(135deg, var(--color-accent), #3d6b4d);
+}
+
+/* Profesyonel border stilleri */
+.border-legal {
+    border: 2px solid var(--color-border);
+}
+
+.border-legal-focus:focus {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(40, 167, 69, 0.3);
+}
