@@ -13,9 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-    title: "AdilAkıl - Hukuk Yapay Zeka Asistanı",
+    title: "AdilAkıl: Hukuk Yapay Zeka Asistanı",
     description:
-        "Türk Anayasası ve Kanunları ile eğitilmiş yapay zeka asistanı",
+        "Türkiye Cumhuriyeti Anayasası ve kanunları ile desteklenen yapay zeka danışmanı.",
+    icons: {
+        icon: "/adilakil.ico?v=1",
+    },
 };
 
 export default function RootLayout({

@@ -1,5 +1,6 @@
 from fastapi import FastAPI, Query
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from app.query_service import get_final_answer
 
 app = FastAPI(
@@ -11,11 +12,14 @@ app = FastAPI(
 # CORS Middleware ekle
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],
+    allow_origins=["http://localhost:3000", "http://localhost:8000"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Next.js static dosyalarını serve et
+app.mount("/static", StaticFiles(directory="frontend/public"), name="static")
 
 @app.get("/")
 async def root():

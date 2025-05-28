@@ -1,8 +1,9 @@
 # Sensitive keywords
 SENSITIVE_KEYWORDS = [
-    "çocuk", "pornografi", "cinsel", "istismar", "taciz", "şiddet",
+    "pornografi", "cinsel", "istismar", "taciz", "şiddet",
     "çıplak", "mahrem", "gizlilik", "tehdit", "uyuşturucu",
-    "hakaret", "nefret", "intihar", "tecavüz", "şantaj", "veri", "suç"
+    "hakaret", "nefret", "intihar", "tecavüz", "şantaj", "suç",
+    "çocuk pornografisi", "çocuk istismarı", "çocuk tacizi", "çocuk şiddeti", "çocuğa şiddet", "çocuğa zarar"
 ]
 
 def is_sensitive_keyword(text):

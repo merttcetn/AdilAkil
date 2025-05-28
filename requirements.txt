@@ -1,23 +1,9 @@
-# Core Dependencies
-sentence-transformers==2.5.1
-pinecone-client==3.0.2
+fastapi==0.110.0
+uvicorn==0.29.0
 openai==1.12.0
+pinecone-client==3.0.2
 langchain==0.1.9
 langchain-core==0.1.27
 langchain-openai==0.0.8
 python-dotenv==1.0.1
-
-# Data Processing
-pandas==2.2.1
-numpy==1.26.4
-
-# Web Framework (Production)
-fastapi==0.110.0
-uvicorn==0.27.1
-pydantic>=2.0.0
-
-# HTTP Requests (if needed)
-requests==2.31.0
-
-# JSON handling for CORS and additional web features
-python-multipart==0.0.9 
+sentence-transformers==2.5.1
