@@ -340,23 +340,6 @@ uvicorn app.main:app --reload --log-level debug
 └── README.md              # This file
 ```
 
-## 🤝 Contributing
-
-Contributions are welcome! Please follow these steps:
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-### Development Guidelines
-
--   Follow PEP 8 for Python code
--   Use TypeScript for frontend development
--   Add tests for new features
--   Update documentation as needed
-
 ## 📝 License
 
 This project is proprietary and confidential. All rights reserved.
@@ -365,28 +348,7 @@ This project is proprietary and confidential. All rights reserved.
 
 -   **Mert Çetin** - [GitHub](https://github.com/merttcetn)
 
-## 🙏 Acknowledgments
-
--   Turkish Constitutional Law texts and legal documents
--   OpenAI for AI capabilities
--   Pinecone for vector search functionality
--   LangChain for prompt engineering tools
-
-## 📊 Performance Notes
-
--   **Response Time**: Typically 2-5 seconds for complex queries
--   **Accuracy**: 90%+ accuracy on Turkish Constitutional Law questions
--   **Safety**: 95%+ success rate in filtering sensitive content
--   **Scalability**: Handles 100+ concurrent requests
-
-## 📞 Support
-
-For technical support or questions:
-
--   Create an issue in the GitHub repository
--   Contact: [Your contact information]
-
 ---
 
 **Version**: 1.0.0  
-**Last Updated**: 2024
+**Last Updated**: May 2025
